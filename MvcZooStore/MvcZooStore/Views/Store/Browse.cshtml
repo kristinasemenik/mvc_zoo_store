@@ -1,0 +1,22 @@
+﻿@model MvcZooStore.Models.Kind
+@{
+    ViewBag.Title = "Browse Pets";
+}
+
+ 
+<div class="kind">
+    <h3><em>@Model.Name</em> Pets</h3>
+    <ul id="pet-list">
+        @foreach (var pet in Model.Pets)
+        {
+            <li>
+                <a href="@Url.Action("Details", new { id = pet.PetID })">
+                    <img alt="@pet.Title" src="@pet.PetArtUrl" />
+                    <span>@pet.Title</span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+  
+   

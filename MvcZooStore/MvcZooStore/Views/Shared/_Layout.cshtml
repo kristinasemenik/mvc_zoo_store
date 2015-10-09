@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script  src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script  src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title">
+                <h1>WELCOME TO THE ZOO STORE!</h1>
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home page", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li><a href="@Url.Content("~/Store/")">Store</a></li>
+                    <li>@{Html.RenderAction("CartSummary", "ShoppingCart");}</li>
+                   @if(Request.IsAuthenticated&& User.Identity.Name=="Administrator") {
+                          <li><a href="@Url.Content("~/StoreManager/")">Admin</a></li>
+                   }                    
+                </ul>
+            </nav>           
+        </header>
+        
+        @{Html.RenderAction("KindMenu", "Store");} 
+                    <section id="main">
+            @RenderBody()
+        </section>
+        <footer>
+            all rights reserved. built by ©kris s. inc. 
+        </footer>
+    </div>
+</body>
+</html>

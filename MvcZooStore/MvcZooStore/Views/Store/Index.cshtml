@@ -1,0 +1,19 @@
+﻿@model IEnumerable <MvcZooStore.Models.Kind>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+<h3>Browse Kinds</h3>
+<p>Select from @Model.Count() kinds:</p>
+<ul>
+    @foreach (var kind in Model)
+    {
+        <li>@Html.ActionLink(kind.Name, "Browse", new { kind = kind.Name })</li> 
+    
+    }
+</ul>
+   
+
+
+

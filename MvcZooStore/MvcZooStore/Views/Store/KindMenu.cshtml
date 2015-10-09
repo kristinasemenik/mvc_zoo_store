@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MvcZooStore.Models.Kind>
+
+<ul id="categories">
+@foreach (var kind in Model)
+    {
+<li>@Html.ActionLink(kind.Name, "Browse", "Store", 
+new { Kind = kind.Name }, null)
+</li>
+}
+</ul>
