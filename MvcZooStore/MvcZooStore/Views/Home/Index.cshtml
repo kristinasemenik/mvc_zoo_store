@@ -1,0 +1,18 @@
+﻿@model List<MvcZooStore.Models.Pet>
+@{
+    ViewBag.Title = "WELCOME TO ZOO Store !!";
+}
+<div id="promotion">
+</div>
+<h3><em>Top-5 sales: </em></h3>
+
+<ul id="pet-list">
+    @foreach (var pet in Model)
+    {
+        <li><a href="@Url.Action("Details", "Store",
+    new { id = pet.PetID })">
+            <img alt="@pet.Title" src="@pet.PetArtUrl" />
+            <span>@pet.Title</span> </a>
+        </li>
+    }
+</ul>

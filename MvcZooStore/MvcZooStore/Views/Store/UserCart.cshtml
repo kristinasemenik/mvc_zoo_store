@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MvcZooStore.Models.OrderDetail>
+@{
+    ViewBag.Title = "Заказы";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    string nameparam = ViewBag.param;
+    int c = 0;
+}
+<h2>Заказы пользователя: @nameparam</h2>
+
+<table>   
+    @foreach (var item in Model)
+    {
+        if (Request.IsAuthenticated && User.Identity.Name == "Administrator")
+        {
+            <p> if works</p>
+            <tr>
+            <td>Заказ № @Html.DisplayFor(modelItem => item.Order.OrderID)
+                @Html.ActionLink("Подробнее", "UserCartDetails", "Checkout", new { idparam = item.Order.OrderID }, "")
+            </td>
+        </tr>
+        }
+        else
+        {
+            int i = String.Compare(item.Order.Username, nameparam, false);
+            if (i == 0)
+            {
+                if (c != item.Order.OrderID)
+                {
+        <tr>
+            <td>Заказ № @Html.DisplayFor(modelItem => item.Order.OrderID)
+                @Html.ActionLink("Подробнее", "UserCartDetails", "Checkout", new { idparam = item.Order.OrderID }, "")
+            </td>
+        </tr>
+                    c = item.Order.OrderID;
+                }
+            }
+        }
+    }
+</table>

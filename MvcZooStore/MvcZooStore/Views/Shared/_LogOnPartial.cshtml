@@ -1,0 +1,7 @@
+﻿@if(Request.IsAuthenticated) {
+    <text>Welcome, <a href= "checkout/usercart?nameparam=@User.Identity.Name">@User.Identity.Name</a>!
+    [ @Html.ActionLink("Exit", "LogOff", "Account") ]</text>
+}
+else {
+    @:[ @Html.ActionLink("LogIn", "LogOn", "Account") ]
+}

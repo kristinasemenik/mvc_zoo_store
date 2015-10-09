@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MvcZooStore.Models.OrderDetail>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    decimal idparam = ViewBag.param;
+    decimal sum = 0;
+    string s = "";
+}
+
+
+
+@foreach (var t in Model)
+{
+    if (t.OrderID == idparam)
+    {
+    <h4>Detailed information about order № @idparam. <span>(Registration data: @Html.DisplayFor(modelItem => t.Order.OrderDate))</span></h4>
+        break;
+    }
+}
+
+
+    <table>
+        <tr>
+            <td>Pet name </td>
+            <td>Quantity </td>
+            <td>Price </td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (item.OrderID == idparam)
+            { 
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Pet.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+            </tr>
+                s = item.Order.Username;
+                sum = sum + item.Quantity * item.UnitPrice;
+            }
+        }
+        <tr>
+            <td class="total">Summary: </td>
+            <td></td>
+            <td class="total">@sum $</td>
+        </tr>
+    </table>
+    <br />
+    @foreach (var item in Model)
+    {
+        if (item.OrderID == idparam)
+        { 
+        <p>Recipient: @Html.DisplayFor(modelItem => item.Order.FirstName) @Html.DisplayFor(modelItem => item.Order.LastName)</p>
+        <p>
+            Country: 
+            @Html.DisplayFor(modelItem => item.Order.Country), 
+            State:
+            @Html.DisplayFor(modelItem => item.Order.State) , 
+             City:
+            @Html.DisplayFor(modelItem => item.Order.City) , 
+            @Html.DisplayFor(modelItem => item.Order.Address), 
+            Postal Code:
+            @Html.DisplayFor(modelItem => item.Order.PostalCode).
+        </p>
+        <p>Phone:
+             @Html.DisplayFor(modelItem => item.Order.Phone)</p>
+            break;
+        }
+    }
+    <br />
+    @Html.ActionLink("Back", "UserCart", "Checkout", new { nameparam = s }, "")
+
