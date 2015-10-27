@@ -44,6 +44,7 @@ C:\Users\kris\Desktop\Новая папка\MvcZooStore\MvcZooStore\obj\Debug\Mv
 \\Vboxsvr\d_drive\finally\Новая папка\MvcZooStore\MvcZooStore\obj\Debug\MvcZooStore.csprojResolveAssemblyReference.cache
 \\Vboxsvr\d_drive\finally\Новая папка\MvcZooStore\MvcZooStore\obj\Debug\MvcZooStore.dll
 \\Vboxsvr\d_drive\finally\Новая папка\MvcZooStore\MvcZooStore\obj\Debug\MvcZooStore.pdb
+<<<<<<< HEAD
 C:\Users\kris\Desktop\finally\Новая папка\MvcZooStore\MvcZooStore\bin\MvcZooStore.dll
 C:\Users\kris\Desktop\finally\Новая папка\MvcZooStore\MvcZooStore\bin\MvcZooStore.pdb
 C:\Users\kris\Desktop\finally\Новая папка\MvcZooStore\MvcZooStore\bin\EntityFramework.dll
@@ -67,3 +68,5 @@ C:\Users\kris\Desktop\finally\Новая папка\MvcZooStore\MvcZooStore\bin\
 C:\Users\kris\Desktop\finally\Новая папка\MvcZooStore\MvcZooStore\obj\Debug\MvcZooStore.csprojResolveAssemblyReference.cache
 C:\Users\kris\Desktop\finally\Новая папка\MvcZooStore\MvcZooStore\obj\Debug\MvcZooStore.dll
 C:\Users\kris\Desktop\finally\Новая папка\MvcZooStore\MvcZooStore\obj\Debug\MvcZooStore.pdb
+=======
+>>>>>>> 0ed3c7c1a18d79c25ad493f2bd0f795a7098237e
