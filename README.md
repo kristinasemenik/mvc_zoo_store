@@ -12,6 +12,7 @@ zoo store for buying pets
          -edit information about pets
          -delete pets
          -also administrator can see all user's orders (by following link with "Welcome, Administrator !" from homepage).
-         
-  There is promщ-action. When you do "checkout" procedure, you can input FREE in a special field and you'll
+  You can login as administrator by input values: login-Administrator, password-admin_1111       
+  There is promo-action. When you do "checkout" procedure, you can input FREE in a special field and you'll
   get an extra-order.
+  
